@@ -20,28 +20,28 @@
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+  color: #666
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+  color: #666
 
 html, body
-	height: 100%
+  height: 100%
 
 body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.75
-	font-family: $default-font
-	overflow-x: hidden
-	opacity: 1
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.75
+  font-family: $default-font
+  overflow-x: hidden
+  opacity: 1
 
 .img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-  
+  display: block
+  max-width: 100%
+  height: auto
+
  
 .wrapper
   background-color: #3a945b
@@ -63,6 +63,33 @@ body
       &__right-column
         @extend .col-md-6
 
+
+
+html.mm-blocking body
+  overflow: auto
+  
+.mm-menu.mm-tiptop:before
+  display: none
+
+.mm-listview .mm-next:before
+  border: none
+  
+#mm-1 .logo
+  display: none
+
+.mm-next:after
+  transform: rotate(225deg)
+  
+.mm-listview>li.mm-vertical.mm-opened>.mm-next:after, .mm-vertical .mm-listview>li.mm-opened>.mm-next:after
+  transform: rotate(45deg)
+
+.nav-panel
+  background-color: #4DC7A0
+
+
+.sf-menu
+  display: none
+  
 
 
 
