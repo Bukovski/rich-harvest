@@ -4998,6 +4998,9 @@ html.mm-blocking body {
       -ms-transform: rotate(45deg);
           transform: rotate(45deg); }
 
+#my-menu {
+  margin-top: 60px; }
+
 .nav-panel {
   background-color: #4DC7A0; }
 

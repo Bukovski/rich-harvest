@@ -9,11 +9,12 @@ $(function() {
     $("#my-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
     $("#my-menu").find("ul").removeClass("sf-menu"); //очищаем от встроеных стилей
     $('#my-menu').mmenu({
-        dropdown: true, //меню ниже панели
+        //dropdown: true, //меню ниже панели
         slidingSubmenus: false,//открытие подменю внутри вниз
         extensions: ["border-none", "theme-white"],
         offCanvas: {
-            position: "left" //открывать слева
+            position: "left", //открывать слева
+            zposition : "front" //не сдвигать body при раскрывании!!!
         },
         navbar: {
             title: "" //убираем название в меню сверху
@@ -27,6 +28,8 @@ $(function() {
     api.bind("close:before",function(){
         $(".hamburger").removeClass("is-active"); //без класса будет гамбургер
     });
+    
+    
    
   
 });
