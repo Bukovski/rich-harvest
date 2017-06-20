@@ -133,8 +133,8 @@ html.mm-blocking body
 .mm-vertical .mm-listview > li.mm-opened > .mm-next:after
   transform: rotate(45deg) //поворачиваем стрелки подменю
   border-color: #fff
-  left: 12px
-
+  right: 23px
+  
 .mm-menu.mm-theme-white .mm-listview
   & > li:hover,
   & > .mm-opened,
@@ -148,12 +148,14 @@ html.mm-blocking body
   & > .mm-selected .mm-next:after
     border-color: #ffffff
 
-  & > li a:not(.mm-next)
+  & > li a:not(.mm-next),
+  & > li span:not(.mm-next)
     font-weight: 700
     
   & li.mm-opened.mm-vertical>.mm-panel
     background-color: #ffffff
     color: #000000
+    padding: 0
 
 .mm-prev:before, .mm-next:after, .mm-arrow:after
     border-color: #fff

@@ -30,7 +30,19 @@ $(function() {
         $(".hamburger").removeClass("is-active"); //без класса будет гамбургер
     });
     
-    
+    //Закрыть подменю если второе подменю открыто
+    var subs = $('.mm-vertical'); // List of expandable sub-menu items.
+    $(subs).each(function () { // Iterate through each sub-menu item...
+        $(this).click(function () { // Set up onclick handler...
+            var clicked = this; // Cache reference to clicked item.
+            for(i = 0, c = subs.length; i < c; i++) { // Iterate through list of sub-menu items...
+                if (subs[i] !== clicked) { // If current item is not the clicked item...
+                    var parent = $(subs[i]).closest('li'); // Get reference to parent <li>, then remove the mm-opened class.
+                    $(parent).removeClass('mm-opened');
+                }
+            }
+        });
+    });
     
    
   
