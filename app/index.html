@@ -32,57 +32,66 @@
 
 </head>
 
-<body class="opened">
+<body class="page">
 
-<div class="nav-panel navBarClass">
-	<a href="#my-menu" class="hamburger hamburger--collapse js-hamburger">
-		<span class="hamburger-box">
-			<span class="hamburger-inner"></span>
-		</span>
-	</a>
-</div>
-<div id="my-menu"></div>
-
-<nav>
-	<ul class="sf-menu">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">About us</a></li>
-		<li><a href="#">Our product</a>
-			<ul>
-				<li><a href="#">Product details</a></li>
-				<li><a href="#">Shopping Cart</a></li>
-				<li><a href="#">Checkout</a></li>
-			</ul>
-		</li>
-		<li class="logo">
-			<a href="#">
-				<img src="img/logo.png" alt="logo">
-			</a>
-		</li>
-		<li><a href="#">News</a>
-			<ul>
-				<li><a href="#">Single page</a></li>
-			</ul>
-		</li>
-		<li><a href="#">Photo gallery</a></li>
-		<li><a href="#">Contact us</a></li>
-	</ul>
-</nav>
-
-
-
-
-
-
-
-
-
-
-
+<header class="page-header">
+	
+	<nav class="navbar">
+		<ul class="navbar__menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About us</a></li>
+			<li><a href="#">Our product</a>
+			<!--<li><span>Our product</span>-->
+				<ul>
+					<li><a href="#">Product details</a></li>
+					<li><a href="#">Shopping Cart</a></li>
+					<li><a href="#">Checkout</a></li>
+				</ul>
+			</li>
+			<li class="navbar__logo">
+				<a href="#">
+					<img src="img/logo.png" alt="logo">
+				</a>
+			</li>
+			<li><a href="#">News</a>
+			<!--<li><span>News</span>-->
+				<ul>
+					<li><a href="#">Single page</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Photo gallery</a></li>
+			<li><a href="#">Contact us</a></li>
+		</ul>
+	</nav>
+	
+	<div class="mobile-nav">
+		<a href="#mobile-menu" class="hamburger hamburger--collapse js-hamburger">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+		</a>
+        <a href="#" class="mobile-nav__logo">
+            <img src="img/logo.png" alt="logo">
+        </a>
+	</div>
+	<div id="mobile-menu"></div>
+	
+</header>
 
 
 
-<div class="wrapper"><!--.container-->
+
+
+
+
+
+
+
+
+
+
+
+<section class="wrapper"><!--.container-->
     <div class="general"><!--.row-->
         <div class="general__central"><!--.col-md-6 .col-md-offset-2-->
             Central section coluvn!!!
@@ -98,7 +107,7 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <hr>
 <hr>
 <hr>

@@ -4,13 +4,14 @@ $(function() {
     }
     
     
-    //$(".sf-menu").after("<div id='my-menu'>"); //создаем блок для меню
-    $(".sf-menu").clone().appendTo("#my-menu"); //клонируем меню с шапки в мобильное меню
-    $("#my-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
-    $("#my-menu").find("ul").removeClass("sf-menu"); //очищаем от встроеных стилей
-    $('#my-menu').mmenu({
-        //dropdown: true, //меню ниже панели
+    //$(".navbar__menu").after("<div id='my-menu'>"); //создаем блок для меню
+    $(".navbar__menu").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
+    $("#mobile-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
+    $("#mobile-menu").find("ul").removeClass("navbar__menu"); //очищаем от встроеных стилей
+    $('#mobile-menu').mmenu({
         slidingSubmenus: false,//открытие подменю внутри вниз
+        autoHeight: true, //авто подгон высоты меню
+        //iconPanels: true,
         extensions: ["border-none", "theme-white"],
         offCanvas: {
             position: "left", //открывать слева
@@ -21,13 +22,14 @@ $(function() {
         }
     });
     //Крестик-гамбургер https://jonsuh.com/hamburgers/
-    var api = $("#my-menu").data("mmenu");
+    var api = $("#mobile-menu").data("mmenu");
     api.bind("open:start",function(){ //когда меню Открыто
         $(".hamburger").addClass("is-active"); //добавить класс, Появится крестик
     });
     api.bind("close:before",function(){
         $(".hamburger").removeClass("is-active"); //без класса будет гамбургер
     });
+    
     
     
    
