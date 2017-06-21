@@ -68,7 +68,7 @@ $(function() {
     
     $(window).scroll(function(){
         var scrollTop = $(window).scrollTop();
-        if (scrollTop > 49) {
+        if (scrollTop > 40) {
             $('body').addClass('header-fixed');
         } else {
             $('body').removeClass('header-fixed');

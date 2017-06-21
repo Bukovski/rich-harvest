@@ -61,18 +61,28 @@ body.header-fixed header
   padding-top: 0
   width: 100%
   z-index: 2
+  
+  .header-wrap .navbar
+    height: 49px
+    
+    .navbar__menu li.navbar__logo
+      width: 100px
+      margin: 0
+      
+      a
+        padding: 0
 
   
 body
   background-color: #007ba4
 
 .page-header
-  position: fixed
+  //position: fixed
   width: 100%
-  padding-top: 50px
+  padding-top: 10px
   background: #ffffff
   transition: 0.7s all
-  z-index: 100
+  z-index: 10
 
   //обычное меню
   .header-wrap
@@ -80,32 +90,51 @@ body
     .navbar
       height: 70px
       z-index: 5
+      text-align: center
       
       .navbar__menu
         list-style: none
-        
+        display: inline-block
+        padding: 0
+        margin: 0
+  
         li
-          float: left
-          width: 120px
           position: relative
-          display: inline
+          display: inline-block
+          vertical-align: middle
+          transition: .25s
+          
+          &.active > a
+            background-color: $accent
+            color: #ffffff
           
           a, span
             display: block
             background: #ffffff
-            border: 1px solid #ffff00
+            border: none
             color: $accent
-            padding: 8px
+            padding: 10px 15px
             text-align: center
             text-decoration: none
             transition: 0.3s all
+            font-weight: 600
+            font-size: em(16)
             
             &:hover
-              background-color: #1ccacd
+              background-color: $accent
+              color: #ffffff
               
           &.navbar__logo
+            width: em(180)
+            margin-top: em(-10)
+  
             a
-              transition: 0.3s all
+              transition: all .3s ease-in-out
+  
+              display: inline-block
+              position: relative
+              cursor: pointer
+              background-color: transparent
               
               img
                 width: 100%
@@ -113,18 +142,32 @@ body
                 transition: 0.7s all
                 
               &:hover
-                background-color: #ffffff
+                //background-color: #ffffff
+                background-color: transparent
             
           ul
             display: none
             position: absolute
-            top: 100%
             list-style: none
             z-index: 5
+            padding: 5px 0
             
             li
               width: 180px
+            
+              a
+                text-align: left
+                padding: 5px 25px
+                
+            li:nth-child(1) a
+              padding-top: 15px
+              
+            li:nth-last-child(1) a
+              padding-bottom: 15px
   
+            li:first-child
+              border-top: 4px solid $accent
+              
           &:hover ul
             display: block
 

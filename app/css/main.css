@@ -5058,62 +5058,96 @@ body.header-fixed header {
   padding-top: 0;
   width: 100%;
   z-index: 2; }
+  body.header-fixed header .header-wrap .navbar {
+    height: 49px; }
+    body.header-fixed header .header-wrap .navbar .navbar__menu li.navbar__logo {
+      width: 100px;
+      margin: 0; }
+      body.header-fixed header .header-wrap .navbar .navbar__menu li.navbar__logo a {
+        padding: 0; }
 
 body {
   background-color: #007ba4; }
 
 .page-header {
-  position: fixed;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 10px;
   background: #ffffff;
   -webkit-transition: 0.7s all;
   -o-transition: 0.7s all;
   transition: 0.7s all;
-  z-index: 100; }
+  z-index: 10; }
   .page-header .header-wrap .navbar {
     height: 70px;
-    z-index: 5; }
+    z-index: 5;
+    text-align: center; }
     .page-header .header-wrap .navbar .navbar__menu {
-      list-style: none; }
+      list-style: none;
+      display: inline-block;
+      padding: 0;
+      margin: 0; }
       .page-header .header-wrap .navbar .navbar__menu li {
-        float: left;
-        width: 120px;
         position: relative;
-        display: inline; }
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transition: .25s;
+        -o-transition: .25s;
+        transition: .25s; }
+        .page-header .header-wrap .navbar .navbar__menu li.active > a {
+          background-color: #84b315;
+          color: #ffffff; }
         .page-header .header-wrap .navbar .navbar__menu li a, .page-header .header-wrap .navbar .navbar__menu li span {
           display: block;
           background: #ffffff;
-          border: 1px solid #ffff00;
+          border: none;
           color: #84b315;
-          padding: 8px;
+          padding: 10px 15px;
           text-align: center;
           text-decoration: none;
           -webkit-transition: 0.3s all;
           -o-transition: 0.3s all;
-          transition: 0.3s all; }
+          transition: 0.3s all;
+          font-weight: 600;
+          font-size: 1em; }
           .page-header .header-wrap .navbar .navbar__menu li a:hover, .page-header .header-wrap .navbar .navbar__menu li span:hover {
-            background-color: #1ccacd; }
-        .page-header .header-wrap .navbar .navbar__menu li.navbar__logo a {
-          -webkit-transition: 0.3s all;
-          -o-transition: 0.3s all;
-          transition: 0.3s all; }
-          .page-header .header-wrap .navbar .navbar__menu li.navbar__logo a img {
-            width: 100%;
-            max-width: 180px;
-            -webkit-transition: 0.7s all;
-            -o-transition: 0.7s all;
-            transition: 0.7s all; }
-          .page-header .header-wrap .navbar .navbar__menu li.navbar__logo a:hover {
-            background-color: #ffffff; }
+            background-color: #84b315;
+            color: #ffffff; }
+        .page-header .header-wrap .navbar .navbar__menu li.navbar__logo {
+          width: 11.25em;
+          margin-top: -0.625em; }
+          .page-header .header-wrap .navbar .navbar__menu li.navbar__logo a {
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            background-color: transparent; }
+            .page-header .header-wrap .navbar .navbar__menu li.navbar__logo a img {
+              width: 100%;
+              max-width: 180px;
+              -webkit-transition: 0.7s all;
+              -o-transition: 0.7s all;
+              transition: 0.7s all; }
+            .page-header .header-wrap .navbar .navbar__menu li.navbar__logo a:hover {
+              background-color: transparent; }
         .page-header .header-wrap .navbar .navbar__menu li ul {
           display: none;
           position: absolute;
-          top: 100%;
           list-style: none;
-          z-index: 5; }
+          z-index: 5;
+          padding: 5px 0; }
           .page-header .header-wrap .navbar .navbar__menu li ul li {
             width: 180px; }
+            .page-header .header-wrap .navbar .navbar__menu li ul li a {
+              text-align: left;
+              padding: 5px 25px; }
+          .page-header .header-wrap .navbar .navbar__menu li ul li:nth-child(1) a {
+            padding-top: 15px; }
+          .page-header .header-wrap .navbar .navbar__menu li ul li:nth-last-child(1) a {
+            padding-bottom: 15px; }
+          .page-header .header-wrap .navbar .navbar__menu li ul li:first-child {
+            border-top: 4px solid #84b315; }
         .page-header .header-wrap .navbar .navbar__menu li:hover ul {
           display: block; }
   .page-header .hamburger {
