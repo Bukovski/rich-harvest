@@ -73,7 +73,7 @@ $(function() {
         } else {
             $('body').removeClass('header-fixed');
         }
-        var topOffset = $('#demosection2').offset().top;
+        var topOffset = $('.wrapper').offset().top;
         var headerHeight = $('.page-header').height();
         var transitionPoint = topOffset - headerHeight;
         if (scrollTop > transitionPoint) {

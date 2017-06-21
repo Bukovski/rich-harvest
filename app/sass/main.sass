@@ -2,7 +2,7 @@
 @import "libs"
 @import "vars"
 
-@import "style"
+//@import "style"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -45,68 +45,116 @@ body
   max-width: 100%
   height: auto
 
- 
 
 
 
-  
-  
 
-  
 
+
+
+
+//добавляется JS для схлопывания основного меню
+body.header-fixed header
+  position: fixed
+  top: 0
+  right: 0
+  padding-top: 0
+  width: 100%
+  z-index: 2
 
   
 body
   background-color: #007ba4
 
 .page-header
-  //position: relative
-  //padding: 0
-  //margin: 0
-  //border-bottom: none
-  
+  position: fixed
+  width: 100%
+  padding-top: 50px
+  background: #ffffff
+  transition: 0.7s all
+  z-index: 100
+
   //обычное меню
-  .navbar
-    padding: 0
-    margin: 0
+  .header-wrap
+    
+    .navbar
+      height: 70px
+      z-index: 5
+      
+      .navbar__menu
+        list-style: none
+        
+        li
+          float: left
+          width: 120px
+          position: relative
+          display: inline
+          
+          a, span
+            display: block
+            background: #ffffff
+            border: 1px solid #ffff00
+            color: $accent
+            padding: 8px
+            text-align: center
+            text-decoration: none
+            transition: 0.3s all
+            
+            &:hover
+              background-color: #1ccacd
+              
+          &.navbar__logo
+            a
+              transition: 0.3s all
+              
+              img
+                width: 100%
+                max-width: 180px
+                transition: 0.7s all
+                
+              &:hover
+                background-color: #ffffff
+            
+          ul
+            display: none
+            position: absolute
+            top: 100%
+            list-style: none
+            z-index: 5
+            
+            li
+              width: 180px
+  
+          &:hover ul
+            display: block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
-  //.navbar__menu
-  //  margin: 0
-  //  background-color: #000
-  //
-  //  li
-  //    //@extend  .col-md-2
-  //    display: inline-block
-  //    position: relative
-  //    vertical-align: middle
-  //    text-decoration: none
-  //    list-style-type: none
-  //    width: 105px
-  //    height: 70px
-  //    text-align: center
-  //    margin-left: 0
-  //    padding: 20px 6px 1px
-  //
-  //    a, span
-  //      background-color: $accent
-  //      color: #fff
-  //      display: inline-block
-  //      position: relative
-  //      transition: .3s ease
-  //      font-size: 14px
-  //      font-weight: 600
-  //      line-height: 16px
-  //      padding: 10px 20px
-  //
-  //      img
-  //        display: inline-block
-  //        width: 100%
-  //        max-width: 186px
-  //        height: auto
-  //
-  //    ul
-  //      display: none
+
     
   
   
