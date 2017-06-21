@@ -5067,6 +5067,7 @@ body.header-fixed header {
         padding: 0; }
 
 .page-header {
+  position: fixed;
   width: 100%;
   padding-top: 10px;
   background: #ffffff;
@@ -5150,7 +5151,6 @@ body.header-fixed header {
         .page-header .header-wrap .navbar .navbar__menu li:hover ul {
           display: block; }
   .page-header .mobile-nav {
-    position: fixed;
     display: none;
     background-color: #ffffff;
     height: 56px;
@@ -5228,6 +5228,9 @@ html.mm-blocking body {
 
 .wrapper {
   background-color: #3a945b; }
+  .wrapper .general {
+    position: relative;
+    margin-top: 100px; }
 
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */

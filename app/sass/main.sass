@@ -2,7 +2,8 @@
 @import "libs"
 @import "vars"
 
-//@import "style"
+
+//@import "sec"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -52,7 +53,6 @@ body
 
 
 
-
 //добавляется JS для схлопывания основного меню
 body.header-fixed header
   position: fixed
@@ -72,8 +72,9 @@ body.header-fixed header
       a
         padding: 0
 
-
+//header
 .page-header
+  position: fixed
   width: 100%
   padding-top: 10px
   background: #ffffff
@@ -81,10 +82,8 @@ body.header-fixed header
   z-index: 10
   box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17)
   
-  
   //обычное меню
   .header-wrap
-    
     .navbar
       height: 70px
       z-index: 5
@@ -140,7 +139,6 @@ body.header-fixed header
                 transition: 0.7s all
                 
               &:hover
-                //background-color: #ffffff
                 background-color: transparent
             
           ul
@@ -171,7 +169,6 @@ body.header-fixed header
   
   //mmenu c миним панелью
   .mobile-nav
-    position: fixed
     display: none
     background-color: #ffffff
     height: 56px
@@ -253,12 +250,14 @@ html.mm-blocking body
 
 
 
-
+//контент
 .wrapper
   background-color: #3a945b
   @extend .container
   
   .general
+    position: relative
+    margin-top: 100px
     @extend .row
     
     &__central

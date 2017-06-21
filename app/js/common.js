@@ -51,14 +51,14 @@ $(function() {
     //при скроле уменьшается шапка по высоте https://codepen.io/Dannzzor/pen/dlAap
     $(window).scroll(function(){
         $(window).width(function (e, index) {
-            if (index > 768) {
+            if (index > 768) { //не для мобильных
                 var scrollTop = $(window).scrollTop();
-                if (scrollTop > 48) {
+                if (scrollTop > 49) { //высота скрола до применения эффекта
                     $('body').addClass('header-fixed');
                 } else {
                     $('body').removeClass('header-fixed');
                 }
-                var topOffset = $('.wrapper').offset().top;
+                var topOffset = $('.wrapper').offset().top; //класс начала контента
                 var headerHeight = $('.page-header').height();
                 var transitionPoint = topOffset - headerHeight;
                 if (scrollTop > transitionPoint) {
