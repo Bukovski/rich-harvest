@@ -2,6 +2,8 @@
 @import "libs"
 @import "vars"
 
+@import "style"
+
 *::-webkit-input-placeholder
 	color: #666
 	opacity: 1
@@ -44,25 +46,6 @@ body
   height: auto
 
  
-.wrapper
-  background-color: #3a945b
-  @extend .container
-  
-  .general
-    @extend .row
-    
-    &__central
-      @extend .col-md-offset-2
-      @extend .col-md-6
-    
-    .inside
-      @extend .row
-    
-      &__left-column
-        @extend .col-md-6
-    
-      &__right-column
-        @extend .col-md-6
 
 
 
@@ -73,19 +56,61 @@ body
 
 
   
-
+body
+  background-color: #007ba4
 
 .page-header
-  padding: 0
-  margin: 0
-  border-bottom: none
+  //position: relative
+  //padding: 0
+  //margin: 0
+  //border-bottom: none
   
   //обычное меню
-  .navbar__menu
-    display: none //прячем обычное меню
+  .navbar
+    padding: 0
+    margin: 0
+
     
-  //мини меню
-  //.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+  //.navbar__menu
+  //  margin: 0
+  //  background-color: #000
+  //
+  //  li
+  //    //@extend  .col-md-2
+  //    display: inline-block
+  //    position: relative
+  //    vertical-align: middle
+  //    text-decoration: none
+  //    list-style-type: none
+  //    width: 105px
+  //    height: 70px
+  //    text-align: center
+  //    margin-left: 0
+  //    padding: 20px 6px 1px
+  //
+  //    a, span
+  //      background-color: $accent
+  //      color: #fff
+  //      display: inline-block
+  //      position: relative
+  //      transition: .3s ease
+  //      font-size: 14px
+  //      font-weight: 600
+  //      line-height: 16px
+  //      padding: 10px 20px
+  //
+  //      img
+  //        display: inline-block
+  //        width: 100%
+  //        max-width: 186px
+  //        height: auto
+  //
+  //    ul
+  //      display: none
+    
+  
+  
+  //mmenu c миним панелью
   .hamburger
     padding: 11px 15px
     
@@ -96,6 +121,7 @@ body
         background-color: $accent
       
   .mobile-nav
+    display: none
     background-color: #ffffff
     height: 56px
     padding: 5px
@@ -127,11 +153,11 @@ html.mm-blocking body
   display: none //убираем лого из мменю
 
 .mm-next:after
-  transform: rotate(225deg) //поворачиваем стрелки подменю
+  transform: rotate(225deg)
 
 .mm-opened > .mm-next:after,
 .mm-vertical .mm-listview > li.mm-opened > .mm-next:after
-  transform: rotate(45deg) //поворачиваем стрелки подменю
+  transform: rotate(45deg)
   border-color: #fff
   right: 23px
   
@@ -159,6 +185,30 @@ html.mm-blocking body
 
 .mm-prev:before, .mm-next:after, .mm-arrow:after
     border-color: #fff
+  
+
+
+
+
+.wrapper
+  background-color: #3a945b
+  @extend .container
+  
+  .general
+    @extend .row
+    
+    &__central
+      @extend .col-md-offset-2
+      @extend .col-md-6
+    
+    .inside
+      @extend .row
+      
+      &__left-column
+        @extend .col-md-6
+      
+      &__right-column
+        @extend .col-md-6
 
 
 

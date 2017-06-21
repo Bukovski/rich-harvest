@@ -5,7 +5,7 @@ $(function() {
     
     
     //$(".navbar__menu").after("<div id='my-menu'>"); //создаем блок для меню
-    $(".navbar__menu").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
+   /* $(".navbar__menu").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
     $("#mobile-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
     $("#mobile-menu").find("ul").removeClass("navbar__menu"); //очищаем от встроеных стилей
     $('#mobile-menu').mmenu({
@@ -30,19 +30,62 @@ $(function() {
         $(".hamburger").removeClass("is-active"); //без класса будет гамбургер
     });
     
-    //Закрыть подменю если второе подменю открыто
-    var subs = $('.mm-vertical'); // List of expandable sub-menu items.
-    $(subs).each(function () { // Iterate through each sub-menu item...
-        $(this).click(function () { // Set up onclick handler...
-            var clicked = this; // Cache reference to clicked item.
-            for(i = 0, c = subs.length; i < c; i++) { // Iterate through list of sub-menu items...
-                if (subs[i] !== clicked) { // If current item is not the clicked item...
-                    var parent = $(subs[i]).closest('li'); // Get reference to parent <li>, then remove the mm-opened class.
+    //Закрыть подменю если второе подменю открыто (всегда ниже инициализации mmenu)
+    var subs = $('.mm-next');
+    $(subs).each(function () {
+        $(this).click(function () {
+            var clicked = this;
+            for(var i = 0, subMenu = subs.length; i < subMenu; i++) {
+                if (subs[i] !== clicked) {
+                    var parent = $(subs[i]).parent('li');
                     $(parent).removeClass('mm-opened');
                 }
             }
         });
+    });*/
+    
+    
+    
+    //https://codepen.io/jonoden/pen/yNwJvP
+    
+    //https://codepen.io/Dannzzor/pen/dlAap
+    /*$(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > 49) {
+            $('body').addClass('header-fixed');
+        } else {
+            $('body').removeClass('header-fixed');
+        }
+        var topOffset = $('#demosection2').offset().top;
+        var headerHeight = $('#topnav').height();
+        var transitionPoint = topOffset - headerHeight;
+        if (scrollTop > transitionPoint) {
+            $('#topnav').addClass('alt-header');
+        } else {
+            $('#topnav').removeClass('alt-header');
+        }
+    });*/
+    
+    $(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > 49) {
+            $('body').addClass('header-fixed');
+        } else {
+            $('body').removeClass('header-fixed');
+        }
+        var topOffset = $('#demosection2').offset().top;
+        var headerHeight = $('.page-header').height();
+        var transitionPoint = topOffset - headerHeight;
+        if (scrollTop > transitionPoint) {
+            $('.page-header').addClass('alt-header');
+        } else {
+            $('.page-header').removeClass('alt-header');
+        }
     });
+    
+    
+
+    
     
    
   
