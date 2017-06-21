@@ -14,13 +14,17 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-  .page-header
-    .mobile-nav
+  .page-header .mobile-nav, #mobile-menu
       display: block
       
+  .page-header
+    padding-top: 0
+    
     .header-wrap
       display: none
-  /**/
+    
+    .mobile-nav__logo img
+      max-width: 105px
 
 
 /* Extra Small Devices, Phones */

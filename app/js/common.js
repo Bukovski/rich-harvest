@@ -5,7 +5,7 @@ $(function() {
     
     
     //$(".navbar__menu").after("<div id='my-menu'>"); //создаем блок для меню
-   /* $(".navbar__menu").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
+    $(".navbar__menu").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
     $("#mobile-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
     $("#mobile-menu").find("ul").removeClass("navbar__menu"); //очищаем от встроеных стилей
     $('#mobile-menu').mmenu({
@@ -29,6 +29,9 @@ $(function() {
     api.bind("close:before",function(){
         $(".hamburger").removeClass("is-active"); //без класса будет гамбургер
     });
+    $('.mobile-nav').click(function () {
+        api.close();
+    });
     
     //Закрыть подменю если второе подменю открыто (всегда ниже инициализации mmenu)
     var subs = $('.mm-next');
@@ -42,46 +45,34 @@ $(function() {
                 }
             }
         });
-    });*/
-    
-    
-    
-    //https://codepen.io/jonoden/pen/yNwJvP
-    
-    //https://codepen.io/Dannzzor/pen/dlAap
-    /*$(window).scroll(function(){
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > 49) {
-            $('body').addClass('header-fixed');
-        } else {
-            $('body').removeClass('header-fixed');
-        }
-        var topOffset = $('#demosection2').offset().top;
-        var headerHeight = $('#topnav').height();
-        var transitionPoint = topOffset - headerHeight;
-        if (scrollTop > transitionPoint) {
-            $('#topnav').addClass('alt-header');
-        } else {
-            $('#topnav').removeClass('alt-header');
-        }
-    });*/
-    
-    $(window).scroll(function(){
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > 40) {
-            $('body').addClass('header-fixed');
-        } else {
-            $('body').removeClass('header-fixed');
-        }
-        var topOffset = $('.wrapper').offset().top;
-        var headerHeight = $('.page-header').height();
-        var transitionPoint = topOffset - headerHeight;
-        if (scrollTop > transitionPoint) {
-            $('.page-header').addClass('alt-header');
-        } else {
-            $('.page-header').removeClass('alt-header');
-        }
     });
+    
+    
+    //при скроле уменьшается шапка по высоте https://codepen.io/Dannzzor/pen/dlAap
+    $(window).scroll(function(){
+        $(window).width(function (e, index) {
+            if (index > 768) {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > 48) {
+                    $('body').addClass('header-fixed');
+                } else {
+                    $('body').removeClass('header-fixed');
+                }
+                var topOffset = $('.wrapper').offset().top;
+                var headerHeight = $('.page-header').height();
+                var transitionPoint = topOffset - headerHeight;
+                if (scrollTop > transitionPoint) {
+                    $('.page-header').addClass('alt-header');
+                } else {
+                    $('.page-header').removeClass('alt-header');
+                }
+            }
+        });
+    
+    });
+    
+  
+    
     
     
 
