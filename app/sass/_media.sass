@@ -9,8 +9,19 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
-
+  .page-header
+    .header-wrap
+      .navbar
+        .navbar__menu
+          li.navbar__logo
+            width: em(200)
+    
+  .top-slider
+    .owl-carousel__content
+      top: 23%
+      
+      .h1
+        font-size: em(50)
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -25,11 +36,30 @@
     
     .mobile-nav__logo img
       max-width: 105px
+      
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+  .page-header
+    .mobile-nav
+      padding: 0
+      height: 45px
+    
+    .mobile-nav__logo
+      left: 40%
+      
+      img
+        width: 80%
+        
+  .top-slider
+    .owl-dots
+      display: none
+      
+    .owl-carousel__content
+      .h1
+        font-size: em(40)
+        
 
 
 /* Custom, iPhone Retina */

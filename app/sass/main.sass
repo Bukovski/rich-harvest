@@ -63,8 +63,8 @@ body.header-fixed header
     height: 49px
     
     .navbar__menu li.navbar__logo
-      width: 100px
       margin: 0
+      width: 100px
       
       a
         padding: 0
@@ -72,25 +72,25 @@ body.header-fixed header
 //header
 .page-header
   position: fixed
-  width: 100%
-  padding-top: 10px
   background: #ffffff
-  transition: 0.7s all
-  z-index: 10
   box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17)
+  padding-top: 20px
+  transition: 0.7s all
+  width: 100%
+  z-index: 10
   
-  //обычное меню
   .header-wrap
     .navbar
-      height: 70px
-      z-index: 5
+      height: 90px
       text-align: center
+      z-index: 5
       
+      /****  обычное меню  ****/
       .navbar__menu
-        list-style: none
         display: inline-block
-        padding: 0
         margin: 0
+        padding: 0
+        list-style: none
   
         li
           position: relative
@@ -99,14 +99,14 @@ body.header-fixed header
           transition: .25s
           
           &.active > a
-            background-color: $accent
             color: #ffffff
+            background-color: $accent
           
           a, span
             display: block
+            color: $accent
             background: #ffffff
             border: none
-            color: $accent
             padding: 10px 15px
             text-align: center
             text-decoration: none
@@ -119,16 +119,15 @@ body.header-fixed header
               color: #ffffff
               
           &.navbar__logo
-            width: em(180)
-            margin-top: em(-10)
+            width: em(250)
+            margin-top: em(-18)
   
             a
-              transition: all .3s ease-in-out
-  
               display: inline-block
               position: relative
               cursor: pointer
               background-color: transparent
+              transition: all .3s ease-in-out
               
               img
                 width: 100%
@@ -141,16 +140,16 @@ body.header-fixed header
           ul
             display: none
             position: absolute
+            padding: 5px 0
             list-style: none
             z-index: 5
-            padding: 5px 0
             
             li
               width: 180px
             
               a
-                text-align: left
                 padding: 5px 25px
+                text-align: left
                 
             li:nth-child(1) a
               padding-top: 15px
@@ -164,7 +163,7 @@ body.header-fixed header
           &:hover ul
             display: block
   
-  //mmenu c миним панелью
+  /****  mmenu c миним панелью ****/
   .mobile-nav
     display: none
     background-color: #ffffff
@@ -200,7 +199,7 @@ body.header-fixed header
   margin-top: 56px //отступ от верха экрана до мменю
   display: none
 
-//mmenu
+/****  mmenu перенастройка стилей  ****/
 html.mm-blocking body
   overflow: auto //прокрутка страницы не пропадает при появлении меню
 
@@ -245,6 +244,89 @@ html.mm-blocking body
     border-color: #fff
   
 
+/****  Верхний слайдер  ****/
+.top-slider
+  position: relative
+  
+  .owl-carousel
+    height: 100vh
+    width: 100%
+    
+    .owl-carousel__slide
+      background-position: center center
+      background-size: cover
+
+      img
+        height: 100vh
+        width: 100%
+
+  .owl-dots
+    /* Магия убирает белую полоску после overflow hidden*/
+    position: absolute
+    /* ---  */
+    bottom: 5%
+    width: 100%
+    text-align: center
+    
+    .owl-dot
+      display: inline-block
+      width: 12px
+      height: 12px
+      margin-right: 12px
+      background-color: #ffffff
+      border-radius: 50%
+      cursor: pointer
+      transition: background-color .25s ease
+      
+      &.active
+        background-color: $accent
+    
+    .owl-dot:nth-last-child(1)
+      margin-right: 0
+  
+  .owl-carousel__content
+    position: absolute
+    display: block
+    margin: auto
+    width: 100%
+    top: 40%
+    text-align: center
+    color: #ffffff
+    z-index: 10
+    
+    img
+      width: 75px
+      height: auto
+      
+    .logo-subtitle
+      width: 100%
+      max-width: 200px
+      margin: 0 auto
+      p
+        text-transform: uppercase
+        font-weight: bold
+        letter-spacing: 3px
+        
+    .h1
+      margin: 0
+      font-family: dancingscript, sans-serif
+      font-size: em(60)
+      font-weight: 500
+  
+    .h6
+      margin: 0
+      text-transform: uppercase
+      font-size: em(20)
+      font-weight: 600
+      letter-spacing: 3px
+
+
+
+
+
+
+
+
 
 
 //контент
@@ -253,8 +335,6 @@ html.mm-blocking body
   @extend .container
   
   .general
-    position: relative
-    margin-top: 100px
     @extend .row
     
     &__central

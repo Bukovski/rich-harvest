@@ -30,7 +30,7 @@ gulp.task('valid-html', function() {
 gulp.task('webserver', function () { //временный сервер для показа заказщику (https://toster.ru/q/323907)
     browserSync.init({
         server: {
-            baseDir: "./dist"
+            baseDir: "./app"
         },
     }, function (err, bs) {
         ngrok.connect({

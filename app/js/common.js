@@ -58,7 +58,7 @@ $(function() {
                 } else {
                     $('body').removeClass('header-fixed');
                 }
-                var topOffset = $('.wrapper').offset().top; //класс начала контента
+                var topOffset = $('.top-slider').offset().top; //класс начала контента
                 var headerHeight = $('.page-header').height();
                 var transitionPoint = topOffset - headerHeight;
                 if (scrollTop > transitionPoint) {
@@ -70,6 +70,35 @@ $(function() {
         });
     
     });
+    
+    //карусель верхняя
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        items: 1,
+        smartSpeed: 700,
+        nav: false,
+        autoHeight: true,
+        autoWidth: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        dots: true,
+        afterAction: afterAction
+    });
+    //https://codepen.io/terned/pen/XjdmQW
+    function changeClass(slide) { //эффект приближения (kenborns)
+        setTimeout(function() {
+            $(".owl-item").each(function() {
+                if ($(this).index() === slide){
+                    $(this).addClass("active");
+                } else{
+                    $(this).removeClass("active");
+                }
+            });
+        },500);
+    }
+    function afterAction(){
+        changeClass(this.owl.currentItem);
+    }
     
   
     
