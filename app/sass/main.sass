@@ -44,12 +44,6 @@ body
   height: auto
 
 
-
-
-
-
-
-
 //добавляется JS для схлопывания основного меню
 body.header-fixed header
   position: fixed
@@ -59,18 +53,18 @@ body.header-fixed header
   width: 100%
   z-index: 2
   
-  .header-wrap .navbar
+  .nav
     height: 49px
     
-    .navbar__menu li.navbar__logo
+    &-logo
       margin: 0
       width: 100px
       
-      a
+      &__link
         padding: 0
 
-//header
-.page-header
+/*********** header ****************/
+.header
   position: fixed
   padding-top: 20px
   width: 100%
@@ -79,33 +73,32 @@ body.header-fixed header
   transition: all .7s ease
   z-index: 20
   
-  .header-wrap
-    .navbar
+  &-wrap
+    .nav
       height: 90px
       text-align: center
       z-index: 5
       
       /****  обычное меню  ****/
-      .navbar__menu
+      &-list
         display: inline-block
         margin: 0
         padding: 0
         list-style: none
-  
-        li
+        
+        &__item
           position: relative
           display: inline-block
           vertical-align: middle
           transition: all .25s ease
           
-          &.active > a
+          &.nav-list__item--active > .nav-list__link
             color: #ffffff
             background-color: $accent
           
-          a, span
+          & .nav-list__link, & .nav-list__span
             display: block
             color: $accent
-            //background: #ffffff
             border: none
             padding: 10px 15px
             text-align: center
@@ -117,52 +110,53 @@ body.header-fixed header
             &:hover
               background-color: $accent
               color: #ffffff
-              
-          &.navbar__logo
-            width: em(250)
-            margin-top: em(-18)
-  
-            a
-              display: inline-block
-              position: relative
-              cursor: pointer
-              background-color: transparent
-              transition: all .3s ease-in-out
-              
-              img
-                width: 100%
-                max-width: 180px
-                transition: 0.7s all
-                
-              &:hover
-                background-color: transparent
-            
-          ul
+          
+          & .nav-list__inside
             display: none
             position: absolute
             padding: 5px 0
             list-style: none
             z-index: 5
             
-            li
+            &-list
               width: 180px
-            
-              a
-                padding: 5px 25px
-                text-align: left
-                background-color: #ffffff
+              
+              &:nth-child(1) .nav-list__inside-link
+                padding-top: 15px
+              
+              &:nth-last-child(1) .nav-list__inside-link
+                padding-bottom: 15px
+              
+              &:first-child
+                border-top: 4px solid $accent
                 
-            li:nth-child(1) a
-              padding-top: 15px
-              
-            li:nth-last-child(1) a
-              padding-bottom: 15px
-  
-            li:first-child
-              border-top: 4px solid $accent
-              
+            &-link
+              padding: 5px 25px
+              text-align: left
+              background-color: #ffffff
+          
           &:hover ul
             display: block
+            
+      &-logo
+        width: em(250)
+        margin-top: em(-18)
+      
+        & .nav-logo__link
+          display: inline-block
+          position: relative
+          cursor: pointer
+          background-color: transparent
+          transition: all .3s ease-in-out
+        
+          &-img
+            width: 100%
+            max-width: 180px
+            transition: 0.7s all
+        
+      &:hover
+        background-color: transparent
+
   
   /****  mmenu c миним панелью ****/
   .mobile-nav
@@ -179,7 +173,7 @@ body.header-fixed header
       top: 5px
       left: 44%
       
-      img
+      &-img
         width: 100%
         height: 100%
         max-width: 120px
@@ -207,7 +201,7 @@ html.mm-blocking body
 .mm-listview .mm-next:before
   border: none //убираем полоски возле стрелок подменю
 
-#mm-0 > ul > .navbar__logo
+#mm-0 > ul > .nav-logo
   display: none //убираем лого из мменю
 
 .mm-next:after
@@ -222,11 +216,11 @@ html.mm-blocking body
 .mm-menu.mm-theme-white .mm-listview
   & > li:hover,
   & > .mm-opened,
-  & > .mm-selected
+  & > .mm-selected,
+  & > .nav-list__item--active
     background-color: $accent
     color: #ffffff
     transition: all .5s ease
-  
   
   & > li:hover .mm-next:after,
   & > .mm-selected .mm-next:after
@@ -248,17 +242,17 @@ html.mm-blocking body
 /****  Верхний слайдер  ****/
 .top-slider
   position: relative
-  
+
   .owl-carousel
     display: block
     margin: auto
     text-align: center
     //height: 100vh
     //width: 100%
-    
+
     .owl-carousel__slide
-      
-      img
+
+      &-img
         height: 100vh
         width: auto //автовыравнивание изображений слайдера по ширине
 
@@ -269,7 +263,7 @@ html.mm-blocking body
     bottom: 5%
     width: 100%
     text-align: center
-    
+
     .owl-dot
       display: inline-block
       width: 12px
@@ -279,13 +273,13 @@ html.mm-blocking body
       border-radius: 50%
       cursor: pointer
       transition: background-color .25s ease
-      
+
       &.active
         background-color: $accent
-    
+
     .owl-dot:nth-last-child(1)
       margin-right: 0
-  
+
   .owl-carousel__content
     position: absolute
     display: block
@@ -295,12 +289,12 @@ html.mm-blocking body
     text-align: center
     color: #ffffff
     z-index: 1
-    
-    img
+
+    &-img
       width: 75px
       height: auto
-      
-    .owl-carousel__content-logo
+
+    &-logo
       width: 100%
       max-width: 200px
       margin: 0 auto
@@ -308,14 +302,14 @@ html.mm-blocking body
         text-transform: uppercase
         font-weight: bold
         letter-spacing: 3px
-        
-    .h1
+
+    &-h1
       margin: 0
       font-family: dancingscript, sans-serif
       font-size: em(60)
       font-weight: 500
-  
-    .h6
+
+    &-h6
       margin: 0
       text-transform: uppercase
       font-size: em(20)

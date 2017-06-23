@@ -5,9 +5,9 @@ $(function() {
     
     
     //$(".navbar__menu").after("<div id='my-menu'>"); //создаем блок для меню
-    $(".navbar__menu").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
+    $(".nav-list").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
     $("#mobile-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
-    $("#mobile-menu").find("ul").removeClass("navbar__menu"); //очищаем от встроеных стилей
+    $("#mobile-menu").find("ul").removeClass("nav-list"); //очищаем от встроеных стилей
     $('#mobile-menu').mmenu({
         slidingSubmenus: false,//открытие подменю внутри вниз
         autoHeight: true, //авто подгон высоты меню
