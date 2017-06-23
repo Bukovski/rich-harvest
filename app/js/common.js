@@ -100,11 +100,7 @@ $(function() {
         changeClass(this.owl.currentItem);
     }
     
-  
     
-    
-    
-
     
     
    

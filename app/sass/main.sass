@@ -72,12 +72,12 @@ body.header-fixed header
 //header
 .page-header
   position: fixed
+  padding-top: 20px
+  width: 100%
   background: #ffffff
   box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17)
-  padding-top: 20px
-  transition: 0.7s all
-  width: 100%
-  z-index: 10
+  transition: all .7s ease
+  z-index: 20
   
   .header-wrap
     .navbar
@@ -96,7 +96,7 @@ body.header-fixed header
           position: relative
           display: inline-block
           vertical-align: middle
-          transition: .25s
+          transition: all .25s ease
           
           &.active > a
             color: #ffffff
@@ -105,7 +105,7 @@ body.header-fixed header
           a, span
             display: block
             color: $accent
-            background: #ffffff
+            //background: #ffffff
             border: none
             padding: 10px 15px
             text-align: center
@@ -150,6 +150,7 @@ body.header-fixed header
               a
                 padding: 5px 25px
                 text-align: left
+                background-color: #ffffff
                 
             li:nth-child(1) a
               padding-top: 15px
@@ -249,16 +250,17 @@ html.mm-blocking body
   position: relative
   
   .owl-carousel
-    height: 100vh
-    width: 100%
+    display: block
+    margin: auto
+    text-align: center
+    //height: 100vh
+    //width: 100%
     
     .owl-carousel__slide
-      background-position: center center
-      background-size: cover
-
+      
       img
         height: 100vh
-        width: 100%
+        width: auto //автовыравнивание изображений слайдера по ширине
 
   .owl-dots
     /* Магия убирает белую полоску после overflow hidden*/
@@ -292,13 +294,13 @@ html.mm-blocking body
     top: 40%
     text-align: center
     color: #ffffff
-    z-index: 10
+    z-index: 1
     
     img
       width: 75px
       height: auto
       
-    .logo-subtitle
+    .owl-carousel__content-logo
       width: 100%
       max-width: 200px
       margin: 0 auto

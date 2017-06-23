@@ -5076,15 +5076,15 @@ body.header-fixed header {
 
 .page-header {
   position: fixed;
+  padding-top: 20px;
+  width: 100%;
   background: #ffffff;
   -webkit-box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
           box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
-  padding-top: 20px;
-  -webkit-transition: 0.7s all;
-  -o-transition: 0.7s all;
-  transition: 0.7s all;
-  width: 100%;
-  z-index: 10;
+  -webkit-transition: all .7s ease;
+  -o-transition: all .7s ease;
+  transition: all .7s ease;
+  z-index: 20;
   /****  mmenu c миним панелью ****/ }
   .page-header .header-wrap .navbar {
     height: 90px;
@@ -5100,16 +5100,15 @@ body.header-fixed header {
         position: relative;
         display: inline-block;
         vertical-align: middle;
-        -webkit-transition: .25s;
-        -o-transition: .25s;
-        transition: .25s; }
+        -webkit-transition: all .25s ease;
+        -o-transition: all .25s ease;
+        transition: all .25s ease; }
         .page-header .header-wrap .navbar .navbar__menu li.active > a {
           color: #ffffff;
           background-color: #84b315; }
         .page-header .header-wrap .navbar .navbar__menu li a, .page-header .header-wrap .navbar .navbar__menu li span {
           display: block;
           color: #84b315;
-          background: #ffffff;
           border: none;
           padding: 10px 15px;
           text-align: center;
@@ -5151,7 +5150,8 @@ body.header-fixed header {
             width: 180px; }
             .page-header .header-wrap .navbar .navbar__menu li ul li a {
               padding: 5px 25px;
-              text-align: left; }
+              text-align: left;
+              background-color: #ffffff; }
           .page-header .header-wrap .navbar .navbar__menu li ul li:nth-child(1) a {
             padding-top: 15px; }
           .page-header .header-wrap .navbar .navbar__menu li ul li:nth-last-child(1) a {
@@ -5241,15 +5241,12 @@ html.mm-blocking body {
 .top-slider {
   position: relative; }
   .top-slider .owl-carousel {
-    height: 100vh;
-    width: 100%; }
-    .top-slider .owl-carousel .owl-carousel__slide {
-      background-position: center center;
-      -webkit-background-size: cover;
-              background-size: cover; }
-      .top-slider .owl-carousel .owl-carousel__slide img {
-        height: 100vh;
-        width: 100%; }
+    display: block;
+    margin: auto;
+    text-align: center; }
+    .top-slider .owl-carousel .owl-carousel__slide img {
+      height: 100vh;
+      width: auto; }
   .top-slider .owl-dots {
     /* Магия убирает белую полоску после overflow hidden*/
     position: absolute;
@@ -5281,15 +5278,15 @@ html.mm-blocking body {
     top: 40%;
     text-align: center;
     color: #ffffff;
-    z-index: 10; }
+    z-index: 1; }
     .top-slider .owl-carousel__content img {
       width: 75px;
       height: auto; }
-    .top-slider .owl-carousel__content .logo-subtitle {
+    .top-slider .owl-carousel__content .owl-carousel__content-logo {
       width: 100%;
       max-width: 200px;
       margin: 0 auto; }
-      .top-slider .owl-carousel__content .logo-subtitle p {
+      .top-slider .owl-carousel__content .owl-carousel__content-logo p {
         text-transform: uppercase;
         font-weight: bold;
         letter-spacing: 3px; }
@@ -5316,7 +5313,7 @@ html.mm-blocking body {
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
   .page-header .header-wrap .navbar .navbar__menu li.navbar__logo {
-    width: 12.5em; }
+    width: 12.375em; }
   .top-slider .owl-carousel__content {
     top: 23%; }
     .top-slider .owl-carousel__content .h1 {

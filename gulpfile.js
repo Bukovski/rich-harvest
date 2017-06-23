@@ -13,10 +13,12 @@ var gulp           = require('../node_modules/gulp'),
 		ftp            = require('../node_modules/vinyl-ftp'),
 		notify         = require("../node_modules/gulp-notify");
 
-var validator = require('../node_modules/gulp-html'),
-    ngrok = require('../node_modules/ngrok'); //сервер для показа заказщику;
-
-gulp.task('valid-html', function() {
+var validator       = require('../node_modules/gulp-html'),
+    ngrok           = require('../node_modules/ngrok'), //сервер для показа заказщику;
+    responsive      = require('../node_modules/gulp-responsive'); //нарезка картинок
+    
+    
+    gulp.task('valid-html', function() {
     return gulp.src('dev/*.html')
         .pipe(validator())
         .on('error', function () {
@@ -42,6 +44,36 @@ gulp.task('webserver', function () { //временный сервер для п
         });
     });
 });
+
+gulp.task('miniature-img', function () { //создлает миниатюры изображений
+    return gulp.src(['app/img/slider-top/**/*.{gif,jpg,jpeg,png}'])
+        .pipe(responsive({ '**/*': [{//Изменить размер всех изображений
+            width: 1600,
+            rename: { suffix: '-1600' }
+        }, {
+            width: 1280,
+            rename: { suffix: '-1280' }
+        }, {
+            width: 960,
+            rename: { suffix: '-960' }
+        }, {
+            width: 640,
+            rename: { suffix: '-640' }
+        }],
+        }, {
+            // Глобальная настройка для всех изображений
+            quality: 70, // Качество для JPEG, webp и выходной форматы TIFF
+            progressive: true, //Использование Прогрессивная (чересстрочная развертка) сканирования для форматов JPEG и PNG выпуск
+            compressionLevel: 6, // Уровень сжатия zlib выходного формате PNG
+            withMetadata: false, // полосы всех метаданных
+            skipOnEnlargement: true,
+            errorOnUnusedConfig: false,
+            errorOnUnusedImage: false,
+            errorOnEnlargement: false
+        }))
+        .pipe(gulp.dest('app/img/slider-top/min')); //куда сохраняем миниатюры
+});
+
 
 
 
