@@ -4,7 +4,7 @@ $(function() {
     }
     
     
-    //$(".navbar__menu").after("<div id='my-menu'>"); //создаем блок для меню
+    //$(".nav-list").after("<div id='mobile-menu'>"); //создаем блок для меню
     $(".nav-list").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
     $("#mobile-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
     $("#mobile-menu").find("ul").removeClass("nav-list"); //очищаем от встроеных стилей
@@ -58,13 +58,13 @@ $(function() {
                 } else {
                     $('body').removeClass('header-fixed');
                 }
-                var topOffset = $('.top-slider').offset().top; //класс начала контента
-                var headerHeight = $('.page-header').height();
+                var topOffset = $('.carousel').offset().top; //класс начала контента
+                var headerHeight = $('.header').height();
                 var transitionPoint = topOffset - headerHeight;
                 if (scrollTop > transitionPoint) {
-                    $('.page-header').addClass('alt-header');
+                    $('.header').addClass('alt-header');
                 } else {
-                    $('.page-header').removeClass('alt-header');
+                    $('.header').removeClass('alt-header');
                 }
             }
         });
@@ -72,7 +72,7 @@ $(function() {
     });
     
     //карусель верхняя
-    $(".owl-carousel").owlCarousel({
+    $(".carousel-wrap").owlCarousel({
         loop: true,
         items: 1,
         smartSpeed: 700,
@@ -81,28 +81,20 @@ $(function() {
         autoWidth: true,
         autoplay: true,
         autoplayTimeout: 5000,
-        dots: true,
-        afterAction: afterAction
+        dots: true
     });
-    //https://codepen.io/terned/pen/XjdmQW
-    function changeClass(slide) { //эффект приближения (kenborns)
-        setTimeout(function() {
-            $(".owl-item").each(function() {
-                if ($(this).index() === slide){
-                    $(this).addClass("active");
-                } else{
-                    $(this).removeClass("active");
-                }
-            });
-        },500);
-    }
-    function afterAction(){
-        changeClass(this.owl.currentItem);
-    }
+    
+    //Плавная прокрутка страницы jQuery.scrollSpeed
+    $(function() {
+        $('body').delay(1000).fadeOut(400);
+        $.scrollSpeed(100, 800);
+    });
     
     
     
     
-   
-  
+    
+    
+    
+    
 });

@@ -5240,23 +5240,23 @@ html.mm-blocking body {
   border-color: #fff; }
 
 /****  Верхний слайдер  ****/
-.top-slider {
+.carousel {
   position: relative; }
-  .top-slider .owl-carousel {
+  .carousel .carousel-wrap {
     display: block;
     margin: auto;
     text-align: center; }
-    .top-slider .owl-carousel .owl-carousel__slide-img {
+    .carousel .carousel-wrap .carousel-wrap__slide-img {
       height: 100vh;
       width: auto; }
-  .top-slider .owl-dots {
+  .carousel .owl-dots {
     /* Магия убирает белую полоску после overflow hidden*/
     position: absolute;
     /* ---  */
     bottom: 5%;
     width: 100%;
     text-align: center; }
-    .top-slider .owl-dots .owl-dot {
+    .carousel .owl-dots .owl-dot {
       display: inline-block;
       width: 12px;
       height: 12px;
@@ -5268,36 +5268,41 @@ html.mm-blocking body {
       -webkit-transition: background-color .25s ease;
       -o-transition: background-color .25s ease;
       transition: background-color .25s ease; }
-      .top-slider .owl-dots .owl-dot.active {
+      .carousel .owl-dots .owl-dot.active {
         background-color: #84b315; }
-    .top-slider .owl-dots .owl-dot:nth-last-child(1) {
+    .carousel .owl-dots .owl-dot:nth-last-child(1) {
       margin-right: 0; }
-  .top-slider .owl-carousel__content {
+  .carousel .carousel-content {
     position: absolute;
     display: block;
     margin: auto;
+    top: 0;
+    bottom: 0;
     width: 100%;
-    top: 40%;
+    height: 25%;
     text-align: center;
     color: #ffffff;
     z-index: 1; }
-    .top-slider .owl-carousel__content-img {
-      width: 75px;
+    .carousel .carousel-content__img {
+      max-width: 100%;
       height: auto; }
-    .top-slider .owl-carousel__content-logo {
+    .carousel .carousel-content__logo {
       width: 100%;
       max-width: 200px;
-      margin: 0 auto; }
-      .top-slider .owl-carousel__content-logo p {
+      margin: 10px auto; }
+      .carousel .carousel-content__logo-text {
         text-transform: uppercase;
         font-weight: bold;
-        letter-spacing: 3px; }
-    .top-slider .owl-carousel__content-h1 {
+        letter-spacing: 0.2em;
+        margin-top: auto;
+        margin-left: auto;
+        max-width: 195px; }
+    .carousel .carousel-content__h1 {
       margin: 0;
       font-family: dancingscript, sans-serif;
       font-size: 3.75em;
       font-weight: 500; }
-    .top-slider .owl-carousel__content-h6 {
+    .carousel .carousel-content__h6 {
       margin: 0;
       text-transform: uppercase;
       font-size: 1.25em;
@@ -5316,10 +5321,8 @@ html.mm-blocking body {
 @media only screen and (max-width: 992px) {
   .header-wrap .nav-logo {
     max-width: 12.1875em; }
-  .top-slider .owl-carousel__content {
-    top: 23%; }
-    .top-slider .owl-carousel__content-h1 {
-      font-size: 3.125em; } }
+  .carousel .carousel-content__h1 {
+    font-size: 3.125em; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
@@ -5334,17 +5337,34 @@ html.mm-blocking body {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
-  .page-header .mobile-nav {
-    padding: 0;
-    height: 45px; }
-  .page-header .mobile-nav__logo {
-    left: 40%; }
-    .page-header .mobile-nav__logo img {
-      width: 80%; }
-  .top-slider .owl-dots {
+  .header {
+    background-color: transparent; }
+    .header .hamburger {
+      padding: 9px 6px; }
+    .header .mobile-nav {
+      padding: 0;
+      height: 40px;
+      background-color: transparent; }
+    .header .mobile-nav__logo {
+      left: 42%;
+      top: 1px; }
+      .header .mobile-nav__logo-img {
+        width: 80%; }
+  #mobile-menu {
+    margin-top: 40px; }
+  .carousel .owl-dots {
     display: none; }
-  .top-slider .owl-carousel__content-h1 {
-    font-size: 2.5em; } }
+  .carousel .carousel-content {
+    height: 50%; }
+    .carousel .carousel-content__logo {
+      margin: 1% auto; }
+      .carousel .carousel-content__logo-text {
+        font-size: 0.8125em; }
+  .carousel .carousel-content__h1 {
+    font-size: 2.1875em;
+    margin-top: -3%; }
+  .carousel .carousel-content__h6 {
+    font-size: 0.9375em; } }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {

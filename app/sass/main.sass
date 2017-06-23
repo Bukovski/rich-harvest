@@ -240,18 +240,15 @@ html.mm-blocking body
   
 
 /****  Верхний слайдер  ****/
-.top-slider
+.carousel
   position: relative
-
-  .owl-carousel
+  
+  .carousel-wrap
     display: block
     margin: auto
     text-align: center
-    //height: 100vh
-    //width: 100%
 
-    .owl-carousel__slide
-
+    .carousel-wrap__slide
       &-img
         height: 100vh
         width: auto //автовыравнивание изображений слайдера по ширине
@@ -263,7 +260,7 @@ html.mm-blocking body
     bottom: 5%
     width: 100%
     text-align: center
-
+    
     .owl-dot
       display: inline-block
       width: 12px
@@ -273,43 +270,49 @@ html.mm-blocking body
       border-radius: 50%
       cursor: pointer
       transition: background-color .25s ease
-
+      
       &.active
         background-color: $accent
-
+    
     .owl-dot:nth-last-child(1)
       margin-right: 0
-
-  .owl-carousel__content
+  
+  .carousel-content
     position: absolute
     display: block
     margin: auto
+    top: 0
+    bottom: 0
     width: 100%
-    top: 40%
+    height: 25%
     text-align: center
     color: #ffffff
     z-index: 1
-
-    &-img
-      width: 75px
+    
+    &__img
+      max-width: 100%
       height: auto
-
-    &-logo
+    
+    &__logo
       width: 100%
       max-width: 200px
-      margin: 0 auto
-      p
+      margin: 10px auto
+      
+      &-text
         text-transform: uppercase
         font-weight: bold
-        letter-spacing: 3px
-
-    &-h1
+        letter-spacing: 0.2em
+        margin-top: auto
+        margin-left: auto
+        max-width: 195px
+  
+    &__h1
       margin: 0
       font-family: dancingscript, sans-serif
       font-size: em(60)
       font-weight: 500
-
-    &-h6
+    
+    &__h6
       margin: 0
       text-transform: uppercase
       font-size: em(20)

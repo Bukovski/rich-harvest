@@ -12,12 +12,8 @@
   .header-wrap .nav-logo
     max-width: em(195)
   
-  .top-slider
-    .owl-carousel__content
-      top: 23%
-      
-      &-h1
-        font-size: em(50)
+  .carousel .carousel-content__h1
+    font-size: em(50)
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -37,24 +33,48 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-  .page-header
+  .header
+    background-color: transparent
+    
+    .hamburger
+      padding: 9px 6px
+      
     .mobile-nav
       padding: 0
-      height: 45px
+      height: 40px
+      background-color: transparent
     
     .mobile-nav__logo
-      left: 40%
+      left: 42%
+      top: 1px
       
-      img
+      &-img
         width: 80%
         
-  .top-slider
+  #mobile-menu
+    margin-top: 40px
+  
+        
+  .carousel
     .owl-dots
       display: none
+  
+    .carousel-content
+      height: 50%
       
-    .owl-carousel__content-h1
-        font-size: em(40)
-        
+      &__logo
+        margin: 1% auto
+      
+        &-text
+          font-size: em(13)
+  
+    .carousel-content__h1
+      font-size: em(35)
+      margin-top: -3%
+  
+    .carousel-content__h6
+      font-size: em(15)
+      
 
 
 /* Custom, iPhone Retina */
