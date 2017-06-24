@@ -533,28 +533,132 @@ html.mm-blocking body
         
       &-text
         color: $grey
+        
+/*********** news *************/
+.news
+  @extend .container
+  padding-bottom: 85px
+  
+  &-shell
+    @extend .col-lg-12
+    text-align: center
+    
+    &__h2
+      font-size: em(40)
+      font-weight: 600
+      margin: 0
+      margin-top: 6%
+      padding: 0
       
+    &__h3
+      margin: 0
+      padding: 0
+      text-transform: uppercase
+      font-size: em(25)
+      font-weight: 500
+      letter-spacing: 4px
+      color: $grey
       
+  &-content
+    @extend .col-lg-6
+    @extend .col-md-6
+    @extend .col-sm-12
+    text-align: left
+    
+  &-posts
+    &__notes
+      @extend .col-lg-10
+      @extend .col-sm-10
       
+    &__button
+      display: inline-block
+      margin-top: 18px
+      margin-left: 74px
+  
+    &__box
+      @extend .row
+      margin-top: 7%
       
+      &-link
+        font-size: em(20)
+        font-weight: 600
+        text-decoration: none
+        color: $accent
+        transition: all .5s ease
+  
+        &:hover
+          text-decoration: none
+          color: #000000
+          
+      &-text
+        color: $grey
+        
+    &__time
+      display: inline-block
+      padding: 5px 15px
+      text-align: center
+      background-color: #f2f5f8
+      color: #000000
+  
+      &-wrap
+        @extend .col-lg-2
+        @extend .col-sm-2
+  
+      &-span
+        font-size: em(40)
+        font-weight: 600
+        line-height: 1
+        margin: 0
+        padding: 0
+        
+      &-text
+        font-size: em(20)
+        font-weight: 600
+        margin: 0 auto
+        padding: 0
       
+    
+    
+    
+  &-banner
+    @extend .col-lg-6
+    @extend .col-md-6
+    @extend .col-sm-12
+    margin-top: 4%
+    background-size: cover
+    //width: 50%
+    height: 100%
+    max-height: 1000px
+    
+    
+    &__box
+      @extend .img-responsive
+      padding-top: 20%
+      color: #ffffff
       
+      &-h2
+        font-family: dancingscript
+        font-size: em(60)
+        font-weight: 500
+        line-height: 50px
+        margin-bottom: 8%
+  
+      &-text
+        text-transform: uppercase
+        font-size: em(20)
+        letter-spacing: 2px
+        margin-bottom: 5%
+  
+    &__button
+      display: inline-block
+      color: #fff
+      background-color: transparent
+      border: 2px solid #ffffff
+      margin-bottom: 27%
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      &:hover
+        background-color: #fff
+        color: $accent
 
 //контент
 .wrapper
