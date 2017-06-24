@@ -113,7 +113,7 @@ body.header-fixed header
           &.nav-list__item--active > .nav-list__link
             color: #ffffff
             background-color: $accent
-          
+    
           & .nav-list__link, & .nav-list__span
             display: block
             color: $accent
@@ -131,7 +131,9 @@ body.header-fixed header
               color: #ffffff
           
           & .nav-list__inside
-            display: none
+            opacity: 0
+            transition: all .5s ease
+            
             position: absolute
             padding: 5px 0
             list-style: none
@@ -148,20 +150,41 @@ body.header-fixed header
               
               &:first-child
                 border-top: 4px solid $accent
+  
+                &::before
+                  top: 15px
+  
+              &::before
+                content: '\f105'
+                position: absolute
+                font-family: fontawesome
+                opacity: 0
+                left: 0
+                top: 5px
+  
+              &:hover::before
+                opacity: 1
+                left: 13px
+                transition: all .7s ease
                 
             &-link
               padding: 5px 25px
               text-align: left
               background-color: #ffffff
+  
+              &:hover
+                color: #000000
+                background-color: #ffffff
+                text-decoration: underline
+                transition: all .3s ease
           
           &:hover ul
-            display: block
-            
+            opacity: 1
+  
       &-logo
         width: em(250)
         margin-top: em(-18)
         transition: all .7s ease-in-out
-  
   
         & .nav-logo__link
           display: inline-block
@@ -177,7 +200,8 @@ body.header-fixed header
         
       &:hover
         background-color: transparent
-
+  
+  
   
   /****  mmenu c миним панелью ****/
   .mobile-nav
@@ -298,47 +322,47 @@ html.mm-blocking body
     .owl-dot:nth-last-child(1)
       margin-right: 0
   
-  .carousel-content
-    position: absolute
-    display: block
-    margin: auto
-    top: 0
-    bottom: 0
-    width: 100%
-    height: 25%
-    text-align: center
-    color: #ffffff
-    z-index: 1
-    
-    &__img
-      max-width: 100%
-      height: auto
-    
-    &__logo
-      width: 100%
-      max-width: 200px
-      margin: 10px auto
-      
-      &-text
-        text-transform: uppercase
-        font-weight: bold
-        letter-spacing: 0.2em
-        margin-top: auto
-        margin-left: auto
-        max-width: 195px
+.carousel-content
+  position: absolute
+  display: block
+  margin: auto
+  top: 0
+  bottom: 0
+  width: 100%
+  height: 25%
+  text-align: center
+  color: #ffffff
+  z-index: 1
   
-    &__h1
-      margin: 0
-      font-family: dancingscript, sans-serif
-      font-size: em(60)
-      font-weight: 500
+  &__img
+    max-width: 100%
+    height: auto
+  
+  &__logo
+    width: 100%
+    max-width: 200px
+    margin: 10px auto
     
-    &__h6
-      margin: 0
+    &-text
       text-transform: uppercase
-      font-size: em(20)
-      font-weight: 600
-      letter-spacing: 3px
+      font-weight: bold
+      letter-spacing: 0.2em
+      margin-top: auto
+      margin-left: auto
+      max-width: 195px
+
+  &__h1
+    margin: 0
+    font-family: dancingscript, sans-serif
+    font-size: em(60)
+    font-weight: 500
+  
+  &__h6
+    margin: 0
+    text-transform: uppercase
+    font-size: em(20)
+    font-weight: 600
+    letter-spacing: 3px
 
 /****** services ******/
 .services
@@ -452,14 +476,14 @@ html.mm-blocking body
     @extend .col-xs-10
     text-align: center
     
-    &-h2
+    &__h2
       font-size: em(40)
       font-weight: 600
       margin: 0
       margin-top: 6%
       padding: 0
   
-    &-h3
+    &__h3
       margin: 0
       padding: 0
       text-transform: uppercase
