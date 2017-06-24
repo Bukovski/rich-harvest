@@ -85,11 +85,20 @@ $(function() {
     });
     
     //Плавная прокрутка страницы jQuery.scrollSpeed
-    $(function() {
-        $('body').delay(1000).fadeOut(400);
-        $.scrollSpeed(100, 800);
-    });
+    $.scrollSpeed(100, 800);
     
+    //кнопка прокрутки вверх
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('#go-up').fadeIn();
+        } else {
+            $('#go-up').fadeOut();
+        }
+    });
+    $('#go-up').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+    });
     
     
     

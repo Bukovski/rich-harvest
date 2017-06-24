@@ -42,6 +42,19 @@ body
   display: block
   max-width: 100%
   height: auto
+  
+.button
+  background-color: $accent
+  text-decoration: none
+  color: #ffffff
+  padding: 15px 25px
+  font-weight: 600
+  transition: all .3s ease
+  
+  &:hover
+    text-decoration: none
+    background-color: darken($accent, 6)
+    color: #ffffff
 
 
 //добавляется JS для схлопывания основного меню
@@ -52,6 +65,7 @@ body.header-fixed header
   padding-top: 0
   width: 100%
   z-index: 2
+  transition: all .7s ease-in-out
   
   .nav
     height: 49px
@@ -59,7 +73,9 @@ body.header-fixed header
     &-logo
       margin: 0
       width: 100px
-      
+      transition: all .7s ease-in-out
+  
+  
       &__link
         padding: 0
 
@@ -70,14 +86,16 @@ body.header-fixed header
   width: 100%
   background: #ffffff
   box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17)
-  transition: all .7s ease
   z-index: 20
+ 
   
   &-wrap
     .nav
       height: 90px
       text-align: center
       z-index: 5
+      transition: all .7s ease-in-out
+      
       
       /****  обычное меню  ****/
       &-list
@@ -90,7 +108,7 @@ body.header-fixed header
           position: relative
           display: inline-block
           vertical-align: middle
-          transition: all .25s ease
+          transition: all .7s ease-in-out
           
           &.nav-list__item--active > .nav-list__link
             color: #ffffff
@@ -106,6 +124,7 @@ body.header-fixed header
             transition: 0.3s all
             font-weight: 600
             font-size: em(16)
+            cursor: pointer
             
             &:hover
               background-color: $accent
@@ -141,13 +160,15 @@ body.header-fixed header
       &-logo
         width: em(250)
         margin-top: em(-18)
-      
+        transition: all .7s ease-in-out
+  
+  
         & .nav-logo__link
           display: inline-block
           position: relative
           cursor: pointer
           background-color: transparent
-          transition: all .3s ease-in-out
+          //transition: all .3s ease-in-out
         
           &-img
             width: 100%
@@ -319,14 +340,197 @@ html.mm-blocking body
       font-weight: 600
       letter-spacing: 3px
 
-
-
-
-
-
-
-
-
+/****** services ******/
+.services
+  @extend .container
+  
+  &-header
+    @extend .col-md-12
+    text-align: center
+    margin-top: 7%
+    margin-bottom: 6.2%
+    
+    &__h3
+      font-size: em(40)
+      font-weight: 600
+      margin: 0
+      padding: 0
+      
+    &__text
+      margin: 0
+      padding: 0
+      font-size: em(30)
+      text-transform: uppercase
+      letter-spacing: em(1.6)
+      color: $grey
+      
+  &-product
+    @extend .col-md-12
+  
+    .product
+      @extend .col-md-6
+      @extend .col-sm-6
+      
+      &-description
+        @extend .col-md-8
+        @extend .col-sm-9
+        padding-top: 6.1%
+        padding-left: .5%
+        
+        &__subtitle
+          color: $accent
+          
+        &__h3
+          margin: 0
+          font-size: em(40)
+          font-weight: 600
+          
+        &__text
+          margin: 0
+          color: $grey
+          margin-bottom: 45px
+  
+      &-pictures
+        @extend .col-md-4
+        @extend .col-md-3
+        margin: 0
+        padding: 0
+        vertical-align: middle
+        
+        &__img
+          margin: 0
+          padding: 0
+          
+  &-banner
+    @extend .col-md-12
+    margin-top: 5%
+    padding: 55px 10px 100px
+    
+    &__wrap
+      @extend .col-md-6
+      @extend .col-md-offset-6
+  
+      .button
+        color: $accent
+        background-color: #ffffff
+        border: 1px solid #ffffff
+      
+        &:hover
+          background-color: $accent
+          color: #ffffff
+      
+    &__span
+      color: #ffffff
+      font-family: dancingscript, sans-serif
+      font-weight: 500
+      font-size: em(57)
+      line-height: em(17)
+  
+    &__text
+      color: #c6dc93
+      font-size: em(20)
+      margin-top: 7%
+      margin-bottom: 2.2%
+      
+    &__author
+      color: #ffffff
+      
+      &-span
+        font-size: em(20)
+        font-weight: 600
+        margin: 0 auto
+        
+      &-text
+        margin: 0 auto 30px
+        
+/************* offer *************/
+.offer
+  @extend .container
+  
+  &-shell
+    @extend .col-lg-12
+    @extend .col-xs-10
+    text-align: center
+    
+    &-h2
+      font-size: em(40)
+      font-weight: 600
+      margin: 0
+      margin-top: 6%
+      padding: 0
+  
+    &-h3
+      margin: 0
+      padding: 0
+      text-transform: uppercase
+      font-size: em(25)
+      font-weight: 500
+      letter-spacing: 4px
+      color: $grey
+    
+    &__left
+      @extend .col-lg-3
+      @extend .col-md-6
+      @extend .col-sm-6
+      text-align: left
+      
+    &__central
+      @extend .col-lg-6
+      
+      &-img
+        width: 100%
+      
+    &__right
+      @extend .col-lg-3
+      @extend .col-md-6
+      @extend .col-sm-6
+      text-align: right
+      
+      .offer-services__products-img
+        margin-left: auto
+      
+  &-services
+    &__products
+      &-img
+        display: block
+        margin: 0
+        width: 100%
+        max-width: 50px
+        
+      &-link
+        font-size: em(30)
+        text-decoration: none
+        color: $accent
+        transition: all .5s ease
+        
+        &:hover
+          text-decoration: none
+          color: #000000
+        
+      &-text
+        color: $grey
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
 //контент
 .wrapper
@@ -350,7 +554,24 @@ html.mm-blocking body
         @extend .col-md-6
 
 
-
+#go-up
+  position: fixed
+  display: none
+  color: #ffffff
+  font-family: fontawesome
+  font-weight: bold
+  font-size: em(25)
+  text-decoration: none
+  background-color: $accent
+  border-radius: 50%
+  padding: 9px 18px
+  right: 3%
+  bottom: 5%
+  z-index: 100
+  
+  &::before
+    content: '\f106'
+  
   
 
 @import "media" // Всегда в конце

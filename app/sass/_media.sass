@@ -4,7 +4,26 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-  /**/
+  .services-banner
+    padding-bottom: 6%
+    
+    &::before
+      content: ''
+      position: absolute
+      display: inline-block
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $accent
+      opacity: .6
+      
+    &__text
+      color: #ffffff
+      
+  .offer-shell__central
+    display: none
+      
 
 
 /* Medium Devices, Desktops */
@@ -14,6 +33,17 @@
   
   .carousel .carousel-content__h1
     font-size: em(50)
+    
+  .services-banner
+    padding-bottom: 12%
+  
+  .services-product
+    display: inline-block
+    
+    .product-pictures__img
+      width: 75px
+      margin-top: 23%
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -28,8 +58,42 @@
     
     .mobile-nav__logo-img
       max-width: 105px
-      
 
+  .product
+    display: table
+    text-align: center
+    
+    &-description
+      display: table-footer-group
+   
+    &-pictures
+      display: table-header-group
+    
+  .services-product .product-pictures__img
+    margin-top: 7%
+    
+  .offer-shell
+    width: 100%
+    margin: 0 auto
+    
+    &-h2
+      font-size: em(30)
+      
+    &-h3
+      font-size: em(17)
+      margin-bottom: 15px
+  
+    &__right,
+    &__left,
+    .offer-services__products-img
+      text-align: center
+      margin: auto
+  
+    .offer-services__products
+      &-link
+        font-size: em(20)
+      &-img
+        max-width: 40px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -73,38 +137,16 @@
       margin-top: -3%
   
     .carousel-content__h6
-      font-size: em(15)
+      display: none
       
+  .services-banner
+    padding-bottom: 8%
+    padding-top: 0
+    
+  
 
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-	/**/
-
-
-/*==========  Mobile First  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
-
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
 	/**/
 
