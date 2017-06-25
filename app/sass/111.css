@@ -1,0 +1,74 @@
+#google-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #e7eaf0;
+}
+@media only screen and (min-width: 768px) {
+    #google-container {
+        height: 300px;
+    }
+}
+@media only screen and (min-width: 1170px) {
+    #google-container {
+        height: 250px;
+    }
+}
+
+#google-map {
+    position: relative;
+}
+#google-map address {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 1em 1em;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 13px;
+    font-size: 0.8125rem;
+}
+@media only screen and (min-width: 768px) {
+    #google-map address {
+        font-size: 15px;
+        font-size: 0.9375rem;
+        text-align: center;
+    }
+}
+
+#zoom-in, #zoom-out {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    transition:all 0.25s ease;
+}
+#zoom-in {
+    background-image: url("../img/map/plus.png");
+}
+#zoom-out {
+    background-image: url("../img/map/minus.png");
+}
+
+#zoom-in:hover, #zoom-out:hover {
+    opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+    #zoom-in, #zoom-out {
+        margin-left: 50px;
+    }
+}
+
+#zoom-in {
+    margin-top: 10px;
+}
+@media only screen and (min-width: 768px) {
+    #zoom-in {
+        margin-top: 50px;
+    }
+}

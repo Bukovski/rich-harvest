@@ -2,6 +2,8 @@
 @import "libs"
 @import "vars"
 
+@import "111"
+
 *::-webkit-input-placeholder
 	color: #666
 	opacity: 1
@@ -25,8 +27,8 @@ body input:required:valid,
 body textarea:required:valid
   color: #666
 
-html, body
-  height: 100%
+//html, body
+//  height: 100% //заставляет mmenu при открытии делать скрол в начало страницы
 
 body
   font-size: 14px
@@ -55,7 +57,6 @@ body
     text-decoration: none
     background-color: darken($accent, 6)
     color: #ffffff
-
 
 //добавляется JS для схлопывания основного меню
 body.header-fixed header
@@ -286,6 +287,7 @@ html.mm-blocking body
 /****  Верхний слайдер  ****/
 .carousel
   position: relative
+  background-color: $grey
   
   .carousel-wrap
     display: block
@@ -428,6 +430,7 @@ html.mm-blocking body
     @extend .col-md-12
     margin-top: 5%
     padding: 55px 10px 100px
+    background-color: $accent
     
     &__wrap
       @extend .col-md-6
@@ -596,7 +599,7 @@ html.mm-blocking body
       display: inline-block
       padding: 5px 15px
       text-align: center
-      background-color: #f2f5f8
+      background-color: $blueGrey
       color: #000000
   
       &-wrap
@@ -622,9 +625,9 @@ html.mm-blocking body
     @extend .col-sm-12
     margin-top: 4%
     background-size: cover
-    //width: 50%
     height: 100%
     max-height: 1000px
+    background-color: $grey
     
     &__box
       @extend .img-responsive
@@ -658,6 +661,8 @@ html.mm-blocking body
 /*********** carousel clients *************/
 .carousel-clients
   @extend .container
+  background-color: $blueGrey
+  margin-bottom: 3%
   
   .owl-dots
     position: relative
@@ -711,7 +716,15 @@ html.mm-blocking body
       font-size: em(20)
       font-style: italic
       color: $grey
-
+      
+      &::before
+        content: '\f10d'
+        margin-right: 5px
+        font-family: fontawesome
+        
+      &::after
+        content: '\f10e'
+        font-family: fontawesome
   
     &-img
       position: relative
@@ -729,28 +742,128 @@ html.mm-blocking body
       margin-bottom: 4%
       font-weight: 600
       
-
-
-//контент
-.wrapper
-  background-color: #3a945b
-  @extend .container
+/*********** footer *************/
+.footer
+  &-contact
+    background-color: $blueGrey
+    box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17)
+    
+    &__wrap
+      @extend .container
+      padding: 4% 0
+      
+    &__logo
+      @extend .col-lg-4
+      @extend .col-md-4
+      @extend .col-sm-3
+      @extend .col-xs-12
+      display: block
+      margin-left: 7%
+      
+      &-img
+        margin: 15px auto
+      
+    &__address
+      @extend .col-lg-2
+      @extend .col-md-2
+      @extend .col-sm-7
+      @extend .col-xs-12
+      
+      &-h4
+        font-size: em(20)
+        margin-bottom: 3%
   
-  .general
-    @extend .row
-    
-    &__central
-      @extend .col-md-offset-2
-      @extend .col-md-6
-    
-    .inside
-      @extend .row
+      &-list
+        margin: 0
+        padding: 0
+        list-style: none
       
-      &__left-column
-        @extend .col-md-6
+      &-item
+        margin-top: 5px
       
-      &__right-column
+      &-link
+        color: $grey
+        cursor: text
+        
+        &:hover
+          text-decoration: none
+          color: $grey
+          
+        &--address, &--phone, &--email
+          &:before
+            display: inline-block
+            padding-right: 5px
+            font-family: fontawesome
+  
+        &--address
+          &::before
+            content: '\f015'
+            
+        &--phone
+          &::before
+            content: '\f095'
+            
+        &--email
+          &::before
+            content: '\f1fa'
+        
+      &-span
+        color: $accent
+        cursor: pointer
+        white-space: nowrap
+        transition: all .7s ease
+        
+        &:hover
+          color: #000000
+      
+    &__links
+      @extend .col-lg-4
+      @extend .col-md-4
+      @extend .col-sm-12
+      @extend .col-sm-offset-1
+      @extend .col-xs-12
+    
+      &-left
+        @extend .col-lg-6
         @extend .col-md-6
+        @extend .col-sm-6
+        margin: 0
+        padding: 0
+        
+      &-right
+        @extend .col-lg-6
+        @extend .col-md-6
+        @extend .col-sm-6
+   
+      &-h4
+        font-size: em(20)
+        margin-bottom: 1%
+  
+      &-list
+        margin: 0
+        padding: 0
+        list-style: none
+        
+      &-item
+        margin: 0
+        margin-top: 5px
+        
+      &-link
+        color: $accent
+        transition: all .7s ease
+  
+        &:hover
+          color: #000000
+        
+      
+      
+      
+      
+      
+      
+      
+      
+
 
 
 #go-up
