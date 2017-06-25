@@ -84,6 +84,19 @@ $(function() {
         dots: true
     });
     
+    //карусель нижняя
+    $(".carousel-clients__content").owlCarousel({
+        loop: true,
+        items: 1,
+        smartSpeed: 700,
+        nav: false,
+        //autoHeight: true,
+        //autoWidth: true,
+        //autoplay: true,
+        autoplayTimeout: 5000,
+        dots: true
+    });
+    
     //Плавная прокрутка страницы jQuery.scrollSpeed
     $.scrollSpeed(100, 800);
     
