@@ -2,8 +2,6 @@
 @import "libs"
 @import "vars"
 
-@import "111"
-
 *::-webkit-input-placeholder
 	color: #666
 	opacity: 1
@@ -173,7 +171,7 @@ body.header-fixed header
               background-color: #ffffff
   
               &:hover
-                color: #000000
+                color: $black
                 background-color: #ffffff
                 text-decoration: underline
                 transition: all .3s ease
@@ -277,7 +275,7 @@ html.mm-blocking body
     
   & li.mm-opened.mm-vertical>.mm-panel
     background-color: #ffffff
-    color: #000000
+    color: $black
     padding: 0
 
 .mm-prev:before, .mm-next:after, .mm-arrow:after
@@ -531,7 +529,7 @@ html.mm-blocking body
         
         &:hover
           text-decoration: none
-          color: #000000
+          color: $black
         
       &-text
         color: $grey
@@ -590,7 +588,7 @@ html.mm-blocking body
   
         &:hover
           text-decoration: none
-          color: #000000
+          color: $black
           
       &-text
         color: $grey
@@ -600,7 +598,7 @@ html.mm-blocking body
       padding: 5px 15px
       text-align: center
       background-color: $blueGrey
-      color: #000000
+      color: $black
   
       &-wrap
         @extend .col-lg-2
@@ -694,7 +692,7 @@ html.mm-blocking body
       margin-bottom: 0
       font-size: em(40)
       font-weight: 600
-      color: #000000
+      color: $black
   
     &-h4
       margin-top: 0
@@ -814,7 +812,7 @@ html.mm-blocking body
         transition: all .7s ease
         
         &:hover
-          color: #000000
+          color: $black
       
     &__links
       @extend .col-lg-4
@@ -853,19 +851,50 @@ html.mm-blocking body
         transition: all .7s ease
   
         &:hover
-          color: #000000
+          color: $black
         
+  &-map
+    display: none
+    
+    &__container
+      width: 100%
+      height: 350px
+      background-color: $blueGrey
       
+    &__zoom-in, &__zoom-out
+      height: 100%
+      width: 100%
+      max-width: 50px
+      cursor: pointer
+      margin-top: 10px
+  
+    &__in-img
+      margin-top: 15px
       
+    &__in-img, &__out-img
+      width: 100%
+      height: 50px
+      background-size: cover
+      transition: 1s
+      margin-left: 15px
       
+      &:hover
+        transition: 1s
+        filter: saturate(0%)
+        
+  &-copyright
+    display: block
+    background-color: $grey
+    text-align: center
+    margin: 0
+    
+    &__text
+      color: #ffffff
+      margin: 0 auto
+      padding-top: 10px
+      padding-bottom: 10px
       
-      
-      
-      
-      
-
-
-
+/**************** button up ****************/
 #go-up
   position: fixed
   display: none
