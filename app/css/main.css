@@ -7853,8 +7853,8 @@ html.mm-blocking body {
       padding: 0; }
   .news-banner {
     margin-top: 4%;
-    -webkit-background-size: cover;
-            background-size: cover;
+    -webkit-background-size: cover !important;
+            background-size: cover !important;
     height: 100%;
     max-height: 1000px; }
     .news-banner__box {
